@@ -1,0 +1,25 @@
+{
+  "name": "workout_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cgjones0711/WorkOut_Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cgjones0711/WorkOut_Tracker/issues"
+  },
+  "homepage": "https://github.com/cgjones0711/WorkOut_Tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.12.7",
+    "monroe": "^1.0.0"
+  }
+}
