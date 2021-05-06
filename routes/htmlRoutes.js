@@ -3,26 +3,12 @@ const Workout = require("../models/workout.js");
 
 
 //excercise
-router.get("/api/workouts", (req, res) => {
-  Workout.find({})
-    .sort({ date: -1 })
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.get("/excercise", (req, res) => {
+  res.sendFile(path.join(__dirname,"../public/excercise.html"))
 });
 
 // stats
 
-router.get("/api/workouts", (req, res) => {
-    Workout.find({})
-      .sort({ date: -1 })
-      .then(dbWorkout => {
-        res.json(dbWorkout);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
+router.get("/stats", (req, res) => {
+    res.sendFile(path.join(__dirname,"../public/stats.html"))
   });
