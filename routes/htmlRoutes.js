@@ -5,7 +5,7 @@ const Workout = require("../models/workout.js");
 //excercise
 router.get("/excercise", (req, res) => {
   Workout.find({})
-  res.sendFile(path.join(__dirname,"../public/excercise.html"))
+  res.sendFile(path.join(__dirname,"../public/exercise.html"))
 });
 
 // stats
