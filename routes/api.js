@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Workout = require("../models/workouts.js");
+const Workout = require("../models/workout.js");
 
 router.get("/workouts", (req, res) => {
   Workout.find({})
@@ -12,7 +12,7 @@ router.get("/workouts", (req, res) => {
     });
 });
 
-app.post("/workout", ({ body }, res) => {
+router.post("/workout", ({ body }, res) => {
   Workout.create(body)
     .then(dbWorkout => {
       res.json(dbWorkout);
