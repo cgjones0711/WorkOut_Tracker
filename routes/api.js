@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Workout = require("../models/workout.js");
+const Workout = require("../models/workouts.js");
 
 router.get("/api/workouts", (req, res) => {
   Workout.find({})
@@ -31,7 +31,7 @@ router.put("/api/workouts/:id" , ({ body }, res) => {
     });
 });
 
-router.get("/api/workouts/range", (req, res) => {
+router.get("/api/workouts/ra", (req, res) => {
   Workout.find({})
     .sort({ date: -1 })
     .then(dbWorkout => {
