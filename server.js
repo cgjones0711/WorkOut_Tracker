@@ -25,55 +25,13 @@ mongoose.connect(
   }
 );
 
-Workout.create({ name: "Running" })
-  .then(dbWorkout => {
-    console.log(dbWorkout);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
-
-app.get("/exercise", (req, res) => {
-  Workout.find({})
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-app.get("/exercise", (req, res) => {
-  Workout.find({})
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-app.post("/exercise", ({ body }, res) => {
-  Workout.create(body)
-    .then(({ _id }) => Workout.findOneAndUpdate({}, { $push: { exercise: _id } }, { new: true }))
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-app.get("/excercise", (req, res) => {
-  Workout.find({})
-    .populate("workout")
-    .then(dbWorkout => {
-      res.json(dbWorkout);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
+// Workout.create({ name: "Running" })
+//   .then(dbWorkout => {
+//     console.log(dbWorkout);
+//   })
+//   .catch(({ message }) => {
+//     console.log(message);
+//   });
 
 app.use(routes)
   
