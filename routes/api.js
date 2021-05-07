@@ -11,6 +11,17 @@ router.get("/workouts", (req, res) => {
       res.status(400).json(err);
     });
 });
+
+app.post("/workout", ({ body }, res) => {
+  Workout.create(body)
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
 router.get("/exercise", ({ body }, res) => {
   Workout.create(body)
     .then(dbWorkout => {

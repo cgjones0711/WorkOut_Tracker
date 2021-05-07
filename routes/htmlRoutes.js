@@ -3,7 +3,7 @@ const Workout = require("../models/workout.js");
 
 
 //excercise
-router.get("/excercise", (req, res) => {
+router.get("/exercise", (req, res) => {
   Workout.find({})
   res.sendFile(path.join(__dirname,"../public/exercise.html"))
 });
