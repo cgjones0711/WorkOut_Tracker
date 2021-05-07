@@ -14,7 +14,7 @@ router.get("/workouts", (req, res) => {
 
 
 router.put("/api/workouts/:id", ({ body, params }, res) => {
-  Workout.addExercise(params.id, { $push: { exercises: body } })
+  Workout.addExercise(params._id, { $push: { exercises: body } })
     .then((dbWorkout) => {
       res.json(dbWorkout);
     })
